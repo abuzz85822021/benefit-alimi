@@ -49,7 +49,7 @@ for(let mi=0;mi<data.members.length;mi++){let m=data.members[mi];
  if(relationParent.includes(m.relation)){
   const birthYear=date(m.dob).getFullYear();
   for(const age of [70,80]){
-   const year=birthYear+age;
+   const year=birthYear+age-1;
    const b=m.calendar==='lunar'?lunarCandidate(year,Number(m.dob.slice(5,7)),Number(m.dob.slice(8,10))):anniversary(m.dob,year);
    if(!b||addDays(b,30)<now)continue;
    const t=tier(tenureAt(b)),arr=[70000,90000,110000,130000,150000];
